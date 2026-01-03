@@ -96,7 +96,7 @@ export abstract class BaseValidator extends BaseSubAgent {
         const result = await analyzer.analyze(input, {
           logger: this.logger.child({ analyzer: name }),
           requestId,
-          config: this.validatorConfig.rules?.[name] as Record<string, unknown>,
+          config: (this.validatorConfig.rules?.[name] ?? {}) as Record<string, unknown>,
         });
 
         allFindings.push(...result.findings);

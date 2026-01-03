@@ -60,10 +60,16 @@ export function filterBySeverity(
   minSeverity: Severity
 ): Finding[] {
   const severityOrder: Record<Severity, number> = {
-    error: 0,
-    warning: 1,
-    info: 2,
-    hint: 3,
+    // Security severity levels
+    critical: 0,
+    high: 1,
+    // Lint severity levels (error maps to high)
+    error: 1,
+    medium: 2,
+    warning: 2,
+    low: 3,
+    info: 3,
+    hint: 4,
   };
 
   const minLevel = severityOrder[minSeverity];
@@ -124,10 +130,16 @@ export function createSummary(findings: Finding[]): ValidationResult['summary'] 
  */
 export function sortBySeverity(findings: Finding[]): Finding[] {
   const severityOrder: Record<Severity, number> = {
-    error: 0,
-    warning: 1,
-    info: 2,
-    hint: 3,
+    // Security severity levels
+    critical: 0,
+    high: 1,
+    // Lint severity levels (error maps to high)
+    error: 1,
+    medium: 2,
+    warning: 2,
+    low: 3,
+    info: 3,
+    hint: 4,
   };
 
   return [...findings].sort(

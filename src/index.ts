@@ -8,7 +8,7 @@
 export { BaseValidator } from './base/BaseValidator.js';
 
 // Analyzer abstractions
-export { BaseAnalyzer, type AnalyzerResult, type Finding } from './analyzers/BaseAnalyzer.js';
+export { BaseAnalyzer, type AnalyzerResult, type AnalyzerContext, type Finding } from './analyzers/BaseAnalyzer.js';
 
 // Types
 export * from './types/index.js';

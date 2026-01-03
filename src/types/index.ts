@@ -2,10 +2,12 @@ import { z } from 'zod';
 
 /**
  * Severity levels for findings
+ * Supports both lint-style (error, warning, info, hint) and 
+ * security-style (critical, high, medium, low) severity levels
  */
-export type Severity = 'error' | 'warning' | 'info' | 'hint';
+export type Severity = 'error' | 'warning' | 'info' | 'hint' | 'critical' | 'high' | 'medium' | 'low';
 
-export const SeveritySchema = z.enum(['error', 'warning', 'info', 'hint']);
+export const SeveritySchema = z.enum(['error', 'warning', 'info', 'hint', 'critical', 'high', 'medium', 'low']);
 
 /**
  * A single finding from validation
@@ -18,6 +20,8 @@ export interface Finding {
   file?: string;
   line?: number;
   column?: number;
+  /** Optional: type of finding (e.g., 'security', 'style', 'performance') */
+  type?: string;
   endLine?: number;
   endColumn?: number;
   code?: string;
