@@ -1,6 +1,10 @@
-import {
-  BaseSubAgent,
-  type SubAgentMetadata,
+// Replace:
+// import { Logger } from '@xorng/template-base';
+// With one of these depending on your project setup:
+import { Logger } from '../types/Logger'; // If local
+// OR
+import type { Logger } from 'winston'; // If using winston
+// OR verify package exists in package.json
   type SubAgentConfig,
   type ProcessRequest,
   createToolHandler,
