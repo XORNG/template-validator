@@ -1,6 +1,10 @@
-import type { Logger } from '@xorng/template-base';
-import type { Finding, Severity, ValidationInput } from '../types/index.js';
-
+// Replace:
+// import { SomeType } from '@xorng/template-base';
+// With correct import path:
+import type { Analyzer } from '../types/Analyzer'; // If local
+// OR
+import { EventEmitter } from 'events'; // If using built-in
+// OR verify package is installed
 /**
  * Result from an analyzer
  */

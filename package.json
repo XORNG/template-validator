@@ -1,4 +1,8 @@
-{
+# Run this command to install the missing dependency:
+npm install @xorng/template-base
+# OR if it's a typo:
+npm install @xorng/template-base-core
+# OR verify the package name is correct
   "name": "@xorng/template-validator",
   "version": "0.1.0",
   "description": "Validator template for XORNG sub-agents",
